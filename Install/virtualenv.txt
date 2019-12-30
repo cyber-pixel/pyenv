@@ -1,0 +1,135 @@
+Python版本管理
+
+指引贴：http://tinyurl.com/rz7nyll
+
+
+pyenv:
+	在同一个环境安装多个不同的Python版本，
+	通过指令随时随地的切换不同的Python版本。
+	https://github.com/yyuu/pyenv
+
+virtualenv和pyenv-virtualenv:
+	可以给某个目录创建独立的Python版本
+	pyenv-virtualenv:
+		https://github.com/yyuu/pyenv-virtualenv
+
+virtualenv + Virtaulenvwrapper：
+	http://tinyurl.com/r4od6cx
+	http://tinyurl.com/sgzl93n
+	virtualenv创建虚拟环境
+	Virtaulenvwrapper管理虚拟环境
+	===========================
+	1.安装virtualenv	
+	pip install virtualenv
+	2.创建运行环境
+	virtualenv [虚拟环境名称] 
+	virtualenv venv
+	#如果不想使用系统的包,加上–no-site-packeages参数
+	virtualenv  --no-site-packages 创建路径名 
+	3.激活环境
+	$ cd venv
+	$ souce ./bin/activate
+	4.退出环境
+	$ deactivate
+	5.删除环境
+	没有使用virtualenvwrapper前，可以直接删除venv文件夹来删除环境
+	6.使用环境
+	进入环境后，一切操作和正常使用python一样
+	安装包使用pip install 包
+	------------------------
+	使用Virtualenvwrapper
+	1.安装
+	pip install --user virtualenvwrapper
+	# then make Bash load virtualenvwrapper automatically
+	echo "source virtualenvwrapper.sh" >> ~/.bashrc
+	source ~/.bashrc
+	2.创建虚拟环境
+	mkvirtualenv --python=python3.6 venv
+	3.激活环境
+	workon #列出虚拟环境列表
+	workon [venv] #切换环境
+	4.退出环境
+	deactivate
+	5.删除环境
+	rmvirtualenv venv
+	6.其他有用指令
+	pip freeze #查看当前安装库版本
+	#创建 requirements.txt 文件，其中包含了当前环境中所有包及 各自的版本的简单列表
+	#保持部署相同，一键安装所有包
+	pip install -r requirements.txt
+	pip freeze > requirements.txt 
+	lsvirtualenv     #列举所有的环境
+	cdvirtualenv     #导航到当前激活的虚拟环境的目录中，相当于pushd 目录
+	cdsitepackages   # 和上面的类似，直接进入到 site-packages 目录
+	lssitepackages    #显示 site-packages 目录中的内容
+	
+	保持开发环境和生产环境一致的话，只需要维护requirements.txt
+	优点是：使用简单，维护简单
+	缺点是：第三方库的版本管理不是很方便，需要手动维护
+
+【pipenv】
+	官方推荐的python版本管理
+	解决了不确定构建 (the build isn’t deterministic) 和 确定构建 的问题
+	http://tinyurl.com/u4n4agv
+	【不要用Pipenv：http://tinyurl.com/ulkg3hb】
+	【不用的原因是，它会更新一些已经确定版本的包，
+	功能还不完善，有兴趣可以参与到开发中】
+
+	不确定构建：requirements.txt没有指定库的版本，或者库的依赖库发生了变更
+	确定构建：库和重要的依赖库做精确版本控制，其它众多的依赖库不做控制
+
+	1.安装
+	$ pip install pipenv
+	2.在指定目录下创建虚拟环境, 会使用本地默认版本的python
+	$ pipenv install
+	3.如果要指定版本创建环境，可以使用如下命令，
+	  当然前提是本地启动目录能找到该版本的python
+	$ pipenv --python 3.6
+	4.激活虚拟环境
+	$ pipenv shell
+
+	5.安装第三方模块, 运行后会生成Pipfile和Pipfile.lock文件
+	$ pipenv install flask==0.12.1
+	6.当然也可以不指定版本：
+	$ pipenv install numpy
+	7.如果想只安装在开发环境才使用的包，这么做：
+	$ pipenv install pytest --dev	
+	8.卸载
+	$ pipenv uninstall numpy
+	
+	无论是生产环境还是开发环境的包都会写入一个Pipfile里面
+	从开发环境构建生产环境
+	9.把当前环境的模块lock住
+	$ pipenv lock //该操作会更新Pipfile.lock文件
+	10.把代码和Pipfile.lock放到生产环境
+	$ pipenv install --ignore-pipfile  //确定构建
+	这一步的库和依赖的版本都是确定的
+	
+	11.在另一个环境做开发，则将代码和Pipfile复制过去
+	$ pipenv install --dev
+	Pipfile里面没有所有子依赖包或者确定的版本，
+	因此该安装可能会更新未指定模块的版本号
+	当我们确定更新的库不会影响程序的功能，就可lock然后发布到生产环境
+
+	pipenv依赖分析详解
+	pipenv每次安装核心包时，都会检测所有核心包的子依赖包，对不满足的子依赖包会做更新。
+	当依赖库发生冲突时，会有提示。
+	12.查看依赖关系
+	$ pipenv graph
+
+	当前虚拟环境目录
+	$ pipenv --venv
+	当前项目根目录
+	$ pipenv --where
+	
+
+
+
+
+	
+
+
+
+
+
+

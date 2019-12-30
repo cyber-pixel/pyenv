@@ -1,0 +1,181 @@
+py3.6+virtualenv+virtualenvwrapper
+py3.7+virtualenv+virtualenvwrapper
+单机多版本共存
+
+主机为多个开发人员提供可扩展的python环境
+1.python多版本共存，指定--prefix=
+2.目录可以单独设置py版本，安装虚拟环境
+
+安装python
+1.不改变centos7自带的py2环境
+	/bin/pip  /bin/pip2  /bin/pip2.7 
+	/bin/python  /bin/python2  /bin/python2.7
+2.不设置python3、pip3等大版本号，用python3.6、python3.7详细版本号代替
+3.源码编译安装，指定--prefix=/usr/local/python3.6
+
+
+python虚拟环境安装
+1.全局用户不安装包
+2.其它用户安装包，必须携带--user
+3.virtualenv+virtualenvwrapper默认是一个用户下只能对应一个版本
+4.为了适配多版本的虚拟环境，将环境变量写入命令中
+	?virtualenv3.6 mkvirtualenv3.6
+	?virtualenv3.7 mkvirtualenv3.7
+
+
+比较一下不同版本的差别
+
+---------------------------------
+$ pip3.6 install --user virtualenv
+$ pip3.6 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  Would remove:
+    /home/zu/.local/bin/virtualenv
+    /home/zu/.local/lib/python3.6/site-packages/virtualenv-16.7.9.dist-info/*
+    /home/zu/.local/lib/python3.6/site-packages/virtualenv.py
+    /home/zu/.local/lib/python3.6/site-packages/virtualenv_support/*
+
+
+$ pip3.6 install --user virtualenvwrapper
+$ pip3.6 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  Would remove:
+    /home/zu/.local/bin/virtualenvwrapper.sh
+    /home/zu/.local/bin/virtualenvwrapper_lazy.sh
+    /home/zu/.local/lib/python3.6/site-packages/virtualenvwrapper-4.8.4-py3.6-nspkg.pth
+    /home/zu/.local/lib/python3.6/site-packages/virtualenvwrapper-4.8.4-py3.6.egg-info
+    /home/zu/.local/lib/python3.6/site-packages/virtualenvwrapper/hook_loader.py
+    /home/zu/.local/lib/python3.6/site-packages/virtualenvwrapper/project.py
+    /home/zu/.local/lib/python3.6/site-packages/virtualenvwrapper/user_scripts.py
+
+---------------------------------
+$ pip3.7 install --user virtualenv
+$ pip3.7 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  Would remove:
+    /home/zu/.local/bin/virtualenv
+    /home/zu/.local/lib/python3.7/site-packages/virtualenv-16.7.9.dist-info/*
+    /home/zu/.local/lib/python3.7/site-packages/virtualenv.py
+    /home/zu/.local/lib/python3.7/site-packages/virtualenv_support/*
+
+$ pip3.7 install --user virtualenvwrapper
+$ pip3.7 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  Would remove:
+    /home/zu/.local/bin/virtualenvwrapper.sh
+    /home/zu/.local/bin/virtualenvwrapper_lazy.sh
+    /home/zu/.local/lib/python3.7/site-packages/virtualenvwrapper-4.8.4-py3.7-nspkg.pth
+    /home/zu/.local/lib/python3.7/site-packages/virtualenvwrapper-4.8.4-py3.7.egg-info
+    /home/zu/.local/lib/python3.7/site-packages/virtualenvwrapper/hook_loader.py
+    /home/zu/.local/lib/python3.7/site-packages/virtualenvwrapper/project.py
+    /home/zu/.local/lib/python3.7/site-packages/virtualenvwrapper/user_scripts.py
+
+========分析不同版本虚拟环境共存的可行性=========
+virtualenv和virtualenvwrapper的版本是相同的
+py3.6 py3.7共用了 ~/local/ 目录
+.local/bin/目录中的virtualenvwrapper.sh、virtualenv等文件是相同
+lib目录中的为不同的版本分别创建了目录
+因此分析，直接用virtualenvwrapper的命令直接创建环境即可
+
+======================================
+# 创建虚拟环境要在非root用户
+# root用户不受权限限制
+
+# cd /opt
+# git clone https://github.com/cyber-pixel/pyenv.git
+虚拟环境目录为：/opt/pyenv
+
+创建项目目录:pyruntime，并变更权限
+# mkdir pyruntime
+# groupadd pyruntime
+# useradd pyenv
+# usermod -a -G pyruntime pyenv
+# chown -R :pyruntime pyruntime
+# chmod g+w pyruntime
+
+
+
+
+
+
+=======创建不同版本的虚拟环境==========
+
+---------创建3.7版的虚拟环境--------
+1.加载环境
+source ~/py_multi/virtualenv_3.7.2.sh
+
+2.创建项目目录，指定在/opt/pyruntime
+mkdir /opt/pyruntime/virtualenv_py3.7
+
+3.创建虚拟环境
+mkvirtualenv --python=python3.7 py3.7
+
+4.切换到目录并启用环境
+cd /opt/pyruntime/virtualenv_py3.7 && workon py3.7
+
+5.退出环境
+deactivate
+--------------------------
+
+
+----------创建3.6版的虚拟环境---------
+1.加载环境
+source ~/py_multi/virtualenv_3.6.2.sh
+
+2.创建项目目录，指定在/opt/pyruntime
+mkdir /opt/pyruntime/virtualenv_py3.6
+
+3.创建虚拟环境
+mkvirtualenv --python=python3.6 py3.6
+
+4.切换到目录并启用环境
+cd /opt/pyruntime/virtualenv_py3.6 && workon py3.6
+
+5.退出环境
+deactivate
+--------------------------
+
+--------其它版本的虚拟环指引-----------
+首先root安装python
+其次非root用户安装virtualenv+virtualenvwrapper，pip3.x指定--user
+	安装之前先检查~/.local/bin中是否或已经安装
+	保证版本的不同不会产生影响
+创建环境变量控制脚本，命名为~/py_multi/virtualenv_3.7.2.sh，提供以下变量：
+	export WORKON_HOME=~/.virtualenvs3.7 #该用户所有此版本的虚拟环境都在这个目录下
+	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7 #python安装目录
+	source ~/.local/bin/virtualenvwrapper.sh #导入相关命令
+	export LD_LIBRARY_PATH="/usr/local/lib"  #指定系统库
+创建环境之前首先切换环境：
+	source ~/py_multi/virtualenv_3.7.2.sh
+	source ~/py_multi/virtualenv_3.8.1.sh
+	source ~/py_multi/virtualenv_3.6.2.sh
+然后依次创建项目目录、virtualenv，然后workon
+
+**用户实际操作的部分只有创建virtualenv_3.7.2.sh**
+--------------------------------------------
+
+========IDE挂载远程环境===========
+选择正确的环境所在目录
+例如，用户zu在项目project1中的py环境
+python: IP:/home/zu/.virtualenvs3.7/env_project1
+code: IP:/opt/pyruntime/project1
+
+
+===========开发环境迁移=============
+用户zu的项目project1从主机A迁移到主机B，或者自己的电脑上
+1.切换到环境中
+workon env_project1
+2.导出requirements.txt
+pip freeze > requirements.txt
+3.在新的环境中安装
+pip install -r requirements.txt
+
+
+==============本实验没有深度使用，只是提供了方案================
+有可能实际的包安装会有其他问题
+
+
+
+
+
+

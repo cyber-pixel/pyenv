@@ -1,0 +1,41 @@
+#http://1t.click/b8eA
+
+
+# yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim -y
+# yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver -y
+# yum install libffi-devel -y 
+# Python3.7及以上版本需要安装libffi-devel，否则安装时会报错 ModuleNotFoundError: No module named ‘_ctypes’ 错误
+
+
+Stable Releases
+# wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tar.xz
+# wget https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz
+# wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tar.xz
+# wget https://www.python.org/ftp/python/3.5.9/Python-3.5.9.tar.xz
+# wget https://www.python.org/ftp/python/3.5.8/Python-3.5.8.tar.xz
+
+# tar -xvJf Python-3.8.1.tar.xz
+
+# cd Python-3.8.1/
+# ./configure --prefix=/opt/pyenv/python/py3.8.1
+# make -j24
+# make install
+
+
+ ln -sf /opt/pyenv/python/py3.8.1/bin/python3 /usr/bin/python3.8.1
+ ln -sf /opt/pyenv/python/py3.8.1/bin/pip3 /usr/bin/pip3.8.1
+
+ ln -sf /opt/pyenv/python/py3.7.6/bin/python3 /usr/bin/python3.7.6
+ ln -sf /opt/pyenv/python/py3.7.6/bin/pip3 /usr/bin/pip3.7.6
+
+ ln -sf /opt/pyenv/python/py3.6.10/bin/python3 /usr/bin/python3.6.10
+ ln -sf /opt/pyenv/python/py3.6.10/bin/pip3 /usr/bin/pip3.6.10
+
+ ln -sf /opt/pyenv/python/py3.5.9/bin/python3 /usr/bin/python3.5.9
+ ln -sf /opt/pyenv/python/py3.5.9/bin/pip3 /usr/bin/pip3.5.9
+
+ ln -sf /opt/pyenv/python/py3.5.8/bin/python3 /usr/bin/python3.5.8
+ ln -sf /opt/pyenv/python/py3.5.8/bin/pip3 /usr/bin/pip3.5.8
+
+
+python3 --version

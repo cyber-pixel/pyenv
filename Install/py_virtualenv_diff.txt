@@ -1,0 +1,150 @@
+#大的版本号是一样的
+#virtualenv-16.7.9 和 virtualenvwrapper-4.8.4 也是一样的
+
+#所以是通用的
+
+
+pip3.5.8 install --user virtualenv
+pip3.5.8 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  /root/.local/bin/virtualenv
+  /root/.local/lib/python3.5/site-packages/__pycache__/virtualenv.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/INSTALLER
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/LICENSE.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/METADATA
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/RECORD
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/WHEEL
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/entry_points.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/top_level.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/zip-safe
+  /root/.local/lib/python3.5/site-packages/virtualenv.py
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/__init__.py
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/__pycache__/__init__.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/pip-19.1.1-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/pip-19.3.1-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/setuptools-42.0.2-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/wheel-0.33.6-py2.py3-none-any.whl
+
+
+pip3.5.8 install --user virtualenvwrapper
+pip3.5.8 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  /root/.local/bin/virtualenvwrapper.sh
+  /root/.local/bin/virtualenvwrapper_lazy.sh
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper-4.8.4-py3.5-nspkg.pth
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper-4.8.4-py3.5.egg-info
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/hook_loader.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/project.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/user_scripts.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/hook_loader.py
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/project.py
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/user_scripts.py
+
+pip3.5.8 install --user virtualenv
+pip3.5.9 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  /root/.local/bin/virtualenv
+  /root/.local/lib/python3.5/site-packages/__pycache__/virtualenv.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/INSTALLER
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/LICENSE.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/METADATA
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/RECORD
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/WHEEL
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/entry_points.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/top_level.txt
+  /root/.local/lib/python3.5/site-packages/virtualenv-16.7.9.dist-info/zip-safe
+  /root/.local/lib/python3.5/site-packages/virtualenv.py
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/__init__.py
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/__pycache__/__init__.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/pip-19.1.1-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/pip-19.3.1-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/setuptools-42.0.2-py2.py3-none-any.whl
+  /root/.local/lib/python3.5/site-packages/virtualenv_support/wheel-0.33.6-py2.py3-none-any.whl
+
+
+pip3.5.8 install --user virtualenvwrapper
+pip3.5.9 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  /root/.local/bin/virtualenvwrapper.sh
+  /root/.local/bin/virtualenvwrapper_lazy.sh
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper-4.8.4-py3.5-nspkg.pth
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper-4.8.4-py3.5.egg-info
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/hook_loader.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/project.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/__pycache__/user_scripts.cpython-35.pyc
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/hook_loader.py
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/project.py
+  /root/.local/lib/python3.5/site-packages/virtualenvwrapper/user_scripts.py
+
+
+pip3.6.10 install --user virtualenv
+pip3.6.10 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  Would remove:
+    /root/.local/bin/virtualenv
+    /root/.local/lib/python3.6/site-packages/virtualenv-16.7.9.dist-info/*
+    /root/.local/lib/python3.6/site-packages/virtualenv.py
+    /root/.local/lib/python3.6/site-packages/virtualenv_support/*
+
+pip3.6.10 install --user virtualenvwrapper
+pip3.6.10 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  Would remove:
+    /root/.local/bin/virtualenvwrapper.sh
+    /root/.local/bin/virtualenvwrapper_lazy.sh
+    /root/.local/lib/python3.6/site-packages/virtualenvwrapper-4.8.4-py3.6-nspkg.pth
+    /root/.local/lib/python3.6/site-packages/virtualenvwrapper-4.8.4-py3.6.egg-info
+    /root/.local/lib/python3.6/site-packages/virtualenvwrapper/hook_loader.py
+    /root/.local/lib/python3.6/site-packages/virtualenvwrapper/project.py
+    /root/.local/lib/python3.6/site-packages/virtualenvwrapper/user_scripts.py
+
+
+pip3.7.6 install --user virtualenv
+pip3.7.6 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  Would remove:
+    /root/.local/bin/virtualenv
+    /root/.local/lib/python3.7/site-packages/virtualenv-16.7.9.dist-info/*
+    /root/.local/lib/python3.7/site-packages/virtualenv.py
+    /root/.local/lib/python3.7/site-packages/virtualenv_support/*
+
+pip3.7.6 install --user virtualenvwrapper
+pip3.7.6 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  Would remove:
+    /root/.local/bin/virtualenvwrapper.sh
+    /root/.local/bin/virtualenvwrapper_lazy.sh
+    /root/.local/lib/python3.7/site-packages/virtualenvwrapper-4.8.4-py3.7-nspkg.pth
+    /root/.local/lib/python3.7/site-packages/virtualenvwrapper-4.8.4-py3.7.egg-info
+    /root/.local/lib/python3.7/site-packages/virtualenvwrapper/hook_loader.py
+    /root/.local/lib/python3.7/site-packages/virtualenvwrapper/project.py
+    /root/.local/lib/python3.7/site-packages/virtualenvwrapper/user_scripts.py
+
+pip3.8.1 install --user virtualenv
+pip3.8.1 uninstall  virtualenv
+Uninstalling virtualenv-16.7.9:
+  Would remove:
+    /root/.local/bin/virtualenv
+    /root/.local/lib/python3.8/site-packages/virtualenv-16.7.9.dist-info/*
+    /root/.local/lib/python3.8/site-packages/virtualenv.py
+    /root/.local/lib/python3.8/site-packages/virtualenv_support/*
+
+
+pip3.8.1 install --user virtualenvwrapper
+pip3.8.1 uninstall virtualenvwrapper
+Uninstalling virtualenvwrapper-4.8.4:
+  Would remove:
+    /root/.local/bin/virtualenvwrapper.sh
+    /root/.local/bin/virtualenvwrapper_lazy.sh
+    /root/.local/lib/python3.8/site-packages/virtualenvwrapper-4.8.4-py3.8-nspkg.pth
+    /root/.local/lib/python3.8/site-packages/virtualenvwrapper-4.8.4-py3.8.egg-info
+    /root/.local/lib/python3.8/site-packages/virtualenvwrapper/hook_loader.py
+    /root/.local/lib/python3.8/site-packages/virtualenvwrapper/project.py
+    /root/.local/lib/python3.8/site-packages/virtualenvwrapper/user_scripts.py
+
+
+
+
+
+
+
