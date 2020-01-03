@@ -8,16 +8,11 @@ fork一份到自己的仓库
 
 
 实现的效果：
-
-不和全局环境冲突，全局环境就是用root用户安装在默认位置的python环境，相对应本方法安装的python不在默认位置，而是指定在/opt/pyenv/python目录内
-
-/opt/pyenv/python，用源码包安装多个版本的环境
-
-/opt/pyenv/pyruntime，虚拟环境和版本
-
-借助virtualenv创建虚拟环境，用virtualenvwrapper实现环境的管理（创建、删除、切换）
-
-在对应的环境内使用命令 pip freeze > requirements.txt  备份环境的库，同时push到github保存
+-   不和全局环境冲突，全局环境就是用root用户安装在默认位置的python环境，相对应本方法安装的python不在默认位置，而是指定在/opt/pyenv/python目录内
+- /opt/pyenv/python，用源码包安装多个版本的环境
+- /opt/pyenv/pyruntime，虚拟环境和版本
+- 借助virtualenv创建虚拟环境，用virtualenvwrapper实现环境的管理（创建、删除、切换）
+- 在对应的环境内使用命令 pip freeze > requirements.txt  备份环境的库，同时push到github保存
   
   
   
