@@ -29,3 +29,5 @@ fork一份到自己的仓库
 -  9.上传到git ， git push
 -  10.退出环境：deactivate
 -  11.删除环境：rmv xxxx_py3.8.1，别删错了，没有撤销
+
+(:
