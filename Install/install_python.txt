@@ -37,5 +37,10 @@ Stable Releases
  ln -sf /opt/pyenv/python/py3.5.8/bin/python3 /usr/bin/python3.5.8
  ln -sf /opt/pyenv/python/py3.5.8/bin/pip3 /usr/bin/pip3.5.8
 
+# 如果只安装python不需要虚拟环境，需要一项额外的设置，将python添加倒linux 的PATH变量中
+# # 在 ~/.bash_profile 中添加一行：
+# # PATH=$PATH:/opt/pyenv/python/py3.8.1/bin/
+# 如果需要安装虚拟环境，不需要设置，在创建并初始化虚拟环境时会自动添加这个变量
+
 
 python3 --version
