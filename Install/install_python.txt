@@ -2,6 +2,7 @@
 
 # yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim -y
 # yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver -y
+# yum install sqlite* -y
 # yum install libffi-devel -y 
 # Python3.7及以上版本需要安装libffi-devel，否则安装时会报错 ModuleNotFoundError: No module named ‘_ctypes’ 错误
 
